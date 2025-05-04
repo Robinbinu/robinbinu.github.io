@@ -1,0 +1,69 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Cross-Platform Development",
+    description:
+      "Build beautiful, performant apps using Flutter with seamless integration across Android, iOS, and web.",
+    icon: "bx:bxl-flutter",
+  },
+  {
+    title: "Modern Web Development",
+    description:
+      "Experienced with ReactJS, HTML, CSS, and JavaScript to create responsive, dynamic web applications.",
+    icon: "bx:code-alt",
+  },
+  {
+    title: "Backend & Database Skills",
+    description:
+      "Proficient in SQL, MySQL, and Firebase for data handling, backend logic, and real-time data sync.",
+    icon: "bx:server",
+  },
+  {
+    title: "Programming Languages",
+    description:
+      "Well-versed in Java, Python, C#, Dart, and C for solving real-world problems across platforms.",
+    icon: "bx:terminal",
+  },
+  {
+    title: "Cloud & DevOps Tools",
+    description:
+      "Hands-on experience with Docker, Git, and CI/CD pipelines for scalable development workflows.",
+    icon: "bx:cloud-upload",
+  },
+  {
+    title: "UI/UX Design Principles",
+    description:
+      "Focused on creating clean, intuitive interfaces with strong user experience, backed by Figma and design collaboration.",
+    icon: "bx:palette",
+  },
+];
+
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    What I Bring to the Table
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    From cross-platform apps to clean web interfaces, here’s what I specialize in.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
