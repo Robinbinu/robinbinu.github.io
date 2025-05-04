@@ -1,0 +1,67 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@/components/footer.astro";
+import Navbar from "@/components/navbar/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+import "@fontsource-variable/bricolage-grotesque";
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
+
+const { title } = Astro.props;
+
+const makeTitle = title
+  ? `${title} | Michael Robin K`
+  : "Michael Robin K | Flutter & Web Developer";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <SEO
+      title={makeTitle}
+      description="Michael Robin K is a passionate Flutter and Web Developer with experience in cross-platform app development, UI/UX design, and cloud technologies."
+      canonical={canonicalURL}
+      twitter={{
+        creator: "@michaelrobink", // if you don't have a Twitter, this can be removed
+        site: "@michaelrobink",
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `Michael Robin K | Flutter & Web Developer`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "Screenshot of Michael Robin K's portfolio",
+        },
+      }}
+    />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <style is:global>
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+</html>
