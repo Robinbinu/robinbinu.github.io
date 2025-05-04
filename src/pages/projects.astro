@@ -1,0 +1,72 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import PricingCard from "@/components/pricing.astro";
+
+const projects = [
+  {
+    name: "DevLink",
+    price: "Full-stack Web App",
+    popular: true,
+    features: [
+      "Astro + Tailwind frontend",
+      "REST API with Express.js",
+      "JWT Auth + MongoDB",
+      "User dashboards & settings",
+      "Dark mode, fully responsive",
+    ],
+    button: {
+      text: "View Project",
+      link: "https://github.com/yourusername/devlink",
+    },
+  },
+  {
+    name: "PaperNotes",
+    price: "Markdown Blog Engine",
+    popular: false,
+    features: [
+      "Built with Astro Content Collections",
+      "Lightweight & fast",
+      "SEO friendly blog system",
+      "Syntax highlighting",
+      "Deployed on Vercel",
+    ],
+    button: {
+      text: "See Repo",
+      link: "https://github.com/yourusername/papernotes",
+    },
+  },
+  {
+    name: "CLI Portfolio",
+    price: "Interactive Terminal UI",
+    popular: false,
+    features: [
+      "Built with Node.js + Ink",
+      "npm install -g your-cli",
+      "Fun way to explore portfolio",
+      "Open source on GitHub",
+      "Fully themeable",
+    ],
+    button: {
+      text: "Try it out",
+      link: "https://github.com/yourusername/cli-portfolio",
+    },
+  },
+];
+---
+
+<Layout title="Projects">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Projects</Fragment>
+      <Fragment slot="desc">
+        A few things I've built — personal, experimental, or just for fun.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-xl mt-12">
+      {projects.map((item) => <PricingCard plan={item} />)}
+    </div>
+  </Container>
+</Layout>
