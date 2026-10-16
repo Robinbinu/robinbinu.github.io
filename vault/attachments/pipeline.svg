@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" font-family="IBM Plex Mono, monospace" font-size="14">
+  <rect width="720" height="200" fill="#0b0c0e"/>
+  <g fill="#101215" stroke="#23262c">
+    <rect x="30" y="70" width="170" height="60"/>
+    <rect x="275" y="70" width="170" height="60"/>
+    <rect x="520" y="70" width="170" height="60"/>
+  </g>
+  <g fill="#e9e9e6" text-anchor="middle">
+    <text x="115" y="105">Obsidian</text>
+    <text x="360" y="105">git push</text>
+    <text x="605" y="105">Pages</text>
+  </g>
+  <g stroke="#ff6b1a" stroke-dasharray="4 5">
+    <line x1="200" y1="100" x2="275" y2="100"/>
+    <line x1="445" y1="100" x2="520" y2="100"/>
+  </g>
+</svg>
